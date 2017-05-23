@@ -5,7 +5,7 @@ module.exports = function() {
 
     var connector = new builder.ChatConnector({
             appId: process.env.MICROSOFT_APP_ID ? process.env.MICROSOFT_APP_ID : '863a1c9b-9897-403f-a8aa-e3fd8329b87d',
-            appPassword: process.env.MICROSOFT_APP_PASSWORD ? process.env.MICROSOFT_APP_PASSWORD : '',
+            appPassword: process.env.MICROSOFT_APP_PASSWORD ? process.env.MICROSOFT_APP_PASSWORD : 'pggMyZwYqYgewJbOTkEWHvW',
            gzipData: true
         });
 
