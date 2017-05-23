@@ -10,6 +10,15 @@ bot.on("event", function (event) {
     bot.send(msg);
 })
 
+var recognizer = new builder.LuisRecognizer('https://westus.api.cognitive.microsoft.com/luis/v2.0/apps/bb31143e-7f94-4838-aeb3-02b399603fbf?subscription-key=eb17b4ee1a45442c909a3779fcfd00c1&verbose=true&timezoneOffset=0&q=');
+bot.recognizer(recognizer);
+
+bot.dialog('saluto', function (session) {
+    session.endDialog('Ciao, sono il tuo assistente personale.');
+}).triggerAction({
+    matches: 'saluto'
+});
+
 //Basic root dialog which takes an inputted color and sends a changeBackground event. No NLP, regex, validation here - just grabs input and sends it back as an event. 
 bot.dialog('/', [
     function (session) {
