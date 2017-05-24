@@ -1,5 +1,8 @@
 require('./connectorSetup.js')();
 
+var JsonPath = require('jsonpath');
+var faqs = require('./faqs.json');
+
 //Bot listening for inbound backchannel events - in this case it only listens for events named "buttonClicked"
 bot.on("event", function (event) {
     var msg = new builder.Message().address(event.address);
@@ -24,7 +27,7 @@ bot.dialog('saluto', function (session) {
 bot.dialog('atletica', function (session) {
     var reply = createEvent("changeBackground", 'blue', session.message.address);
     session.send(reply);
-    session.send('Le modalità di accesso alla struttura sportiva dell\'Arma sono disciplinate dal....');
+    session.send(retrieveResponse('atletica'));
 }).triggerAction({
     matches: 'atletica'
 });
@@ -32,7 +35,7 @@ bot.dialog('atletica', function (session) {
 bot.dialog('corazzieri', function (session) {
     var reply = createEvent("changeBackground", 'red', session.message.address);
     session.send(reply);
-    session.send('Per entrare a far parte dei Corazzieri è innanzitutto necessario arruolarsi nell\'Arma e successivamente partecipare a selezioni interne.');
+    session.send(retrieveResponse('corazzieri'));
 }).triggerAction({
     matches: 'corazzieri'
 });
@@ -52,6 +55,11 @@ const createEvent = (eventName, value, address) => {
     msg.data.name = eventName;
     msg.data.value = value;
     return msg;
+}
+
+function retrieveResponse(intent) {
+    var response = _.first(JsonPath.query(faqs, '$.faqs[*].intent === "' + intent + '"'));
+    return response;
 }
 
 

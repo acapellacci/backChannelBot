@@ -1,11 +1,12 @@
 {
-  "name": "backchannelbot",
+  "name": "BackChannelBot",
   "version": "1.0.0",
   "description": "",
   "main": "app.js",
   "dependencies": {
     "botbuilder": "^3.5.4",
-    "restify": "^4.3.0"
+    "restify": "^4.3.0",
+    "jsonpath": "^0.2.10"
   },
   "devDependencies": {},
   "scripts": {
@@ -13,12 +14,12 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/ryanvolum/backChannelBot.git"
+    "url": "git+https://github.com/acapellacci/backChannelBot.git"
   },
-  "author": "Ryan Volum",
+  "author": "3wlab s.r.l.",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/ryanvolum/backChannelBot/issues"
+    "url": "https://github.com/acapellacci/backChannelBot/issues"
   },
-  "homepage": "https://github.com/ryanvolum/backChannelBot#readme"
+  "homepage": "https://github.com/acapellacci/backChannelBot#readme"
 }

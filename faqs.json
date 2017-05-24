@@ -1,0 +1,103 @@
+{
+        "faqs":[    
+        {      
+              "intent":"atletica",
+              "response":"Le modalità di accesso alla struttura sportiva dell'Arma sono disciplinate dal D.P.R. n. 83/2004 pubblicato sulla Gazzetta Ufficiale n. 76 del 31 marzo 2004 che ha previsto una nuova specifica procedura per tali speciali arruolamenti. In attuazione di tali disposizioni il reclutamento è realizzato tramite bando di concorso annuale, pubblicato in Gazzetta Ufficiale, nel quale sono indicate le specialità d'interesse ed il numero dei posti messi a concorso. Oltre ai requisiti necessari per l'arruolamento nell'Arma dei Carabinieri di cui all'art. 5 del D.Lgs. 12 maggio 1995, n. 198 e successive modificazioni, i candidati devono aver conseguito nell'anno precedente, nella disciplina prescelta, risultati agonistici di livello nazionale certificati dal C.O.N.I. o dalle Federazioni sportive nazionali. Alla valutazione dei titoli provvede una Commissione esaminatrice nominata dal Comandante Generale."
+        },
+    
+        {
+              "intent":"patrimonio_culturale",
+              "response":"Per far parte del Comando Carabinieri Tutela Patrimonio Culturale, è necessario essere preventivamente arruolati nell'Arma, aderire ad apposita interpellanza (è richiesta esperienza di polizia giudiziaria e possesso di adeguato titolo di studio, minimo di scuola secondaria, con indirizzo classico) e frequentare uno specifico corso addestrativo (tenuto da storici dell'arte e da funzionari del Ministero per i Beni e le Attività Culturali), al termine del quale si ottiene la relativa specializzazione."
+        },
+    
+        {   
+              "intent":"sofisticazioni_alimentari",
+              "response":"Per far parte del Comando Carabinieri per la Sanità (NAS) è necessario essere preventivamente arruolati nell'Arma tramite concorso pubblico. Dopo alcuni anni di servizio effettivo è possibile aderire ad apposita interpellanza interna previa verifica del possesso degli specifici requisiti richiesti ed indicati nell'interpellanza stessa, all'atto della sua diramazione. Successivamente, a seguito di specifico corso di qualificazione, il militare viene destinato presso uno dei N.A.S. dislocati sul territorio nazionale."
+        },
+    
+        {  
+              "intent":"carabinieri a cavallo",
+              "response":"Per entrare a far parte del Reggimento Carabinieri a Cavallo è innanzitutto necessario arruolarsi nell'Arma e successivamente partecipare a selezioni interne."
+        },
+    
+        {
+              "intent":"racis",
+              "response":"Per entrare a far parte del Raggruppamento CC Investigazioni Scientifiche nel ruolo Ispettori è necessario essere arruolati con il grado di Maresciallo. Periodicamente vengono indette interpellanze per la partecipazione ad appositi corsi di specializzazione per tutto il personale. Per accedere direttamente al Raggruppamento CC Investigazioni Scientifiche nel ruolo Ufficiali occorre, invece, aderire al bando di concorso per Ufficiale del Ruolo Tecnico, o a quello per il reclutamento degli ufficiali in ferma prefissata (30 mesi) ausiliari del predetto ruolo per i quali è necessario essere in possesso del diploma di laurea in materie scientifiche (specificato nel bando) ed avere un'età non superiore ad anni 32. A tali concorsi possono partecipare anche i Marescialli dei CC che non abbiano superato il 40° anno di età e gli appartenenti alle Forze di Completamento che non abbiano superato il 34° anno di età."
+        },
+    
+        {
+            "intent":"corazzieri",
+            "response":"Per entrare a far parte dei Corazzieri è innanzitutto necessario arruolarsi nell'Arma e successivamente partecipare a selezioni interne."
+        },
+    
+        {
+            "intent":"piloti di elicottero",
+            "response":"Per diventare pilota di elicotteri è innanzitutto necessario arruolarsi nell'Arma e successivamente partecipare a selezioni interne tra il personale in servizio che abbia aderito ad apposita interpellanza diramata dall'Uff. Addestramento e Regolamenti del Comando Generale. L'iter selettivo prevede l'accertamento dell'idoneità fisica presso un istituto medico legale dell'A.M., una prova in volo ed un colloquio a carattere generale, la definizione di una graduatoria comprendente eventuali titoli di merito (culturali e militari). Essere già in possesso di un brevetto di volo è un elemento preferenziale, ma non necessario per poter accedere alle selezioni." 
+        },
+    
+        {
+            "intent":"lunghezza capelli donne",
+            "response":"I capelli, per il personale femminile nelle Forze Armate, devono essere acconciati in modo che:</p> <ul> { <div style=\"text-align: justify;\">posteriormente, non superino il bordo inferiore del colletto di giacche o camicie;  }, { <div style=\"text-align: justify;\">anteriormente, non eccedano al di sotto della sopracciglia. }, </ul>"
+        },
+    
+        {
+            "intent":"riammissione in servizio",
+            "response":"La riammissione in servizio, anche in considerazione che non si riscontrano vacanze organiche nel ruolo Appuntati e Carabinieri, non sono al momento previste."
+        },
+    
+        {
+            "intent":"parenti di invalidi",
+            "response":"La normativa a base dei vari bandi di concorso nella pubblica amministrazione, può prevedere particolari facilitazioni, per l'assunzione di parenti di militari deceduti o resi permanentemente invalidi in misura non inferiore all'80%, nell'espletamento di una operazione di servizio. Quanto sopra infatti è specificamente previsto dall'art.18 della legge 12 marzo 1999, n.68."
+        },
+    
+        {
+            "intent":"formazione marescialli",
+            "response":"Il corso di formazione degli allievi marescialli dell'Arma dei carabinieri ha durata biennale e prevede un addestramento fisico, militare e professionale. Il primo anno di corso si svolge a Velletri (RM), mentre il secondo anno si svolge a Firenze. Il successivo impiego, anche se è ovviamente subordinato alle preminenti esigenze di servizio, è stabilito anche in base all'analisi delle preferenze degli allievi marescialli, ai quali è consentito, al termine del corso, indicare tre Regioni amministrative di preferenza, esclusa quella di origine. Per aspirare ad un successivo trasferimento nella Regione di provenienza, sarà necessario aver prestato almeno otto anni di servizio."
+        },
+    
+        {
+            "intent":"riserva selezionata",
+            "response":"Novità importante del decreto legislativo 215/01 è costituita dalla nomina ad Ufficiale di Complemento, conferita ai cittadini italiani (civili, uomini e donne) in possesso di spiccata professionalità e che diano ampio affidamento per incarichi nelle Forze Armate. Infatti, alla luce delle recenti esperienze nazionali ed internazionali, si è ritenuto utile poter contare anche su una \"Riserva Selezionata\" costituita con personale in possesso di peculiari specializzazioni da trarre dal personale civile, ai quali verrebbe conferita la nomina ad Ufficiale fino al grado di Maggiore, in funzione dell'età e del ruolo rivestito in campo sociale od economico. Con decreto del Ministro della Difesa sono fissate le procedure da seguirsi, le modalità per l'individuazione delle professionalità e del grado conferibile, nonché gli eventuali ulteriori requisiti, secondo criteri analoghi a quelli individuati dal titolo II del regio decreto 16 maggio 1932, n.819. In sostanza, si tratta di una riedizione della \"Legge Marconi\" con R.D. n.819 del 16 mag.1932, finalizzata alle esigenze attuali delle Forze Armate. Al momento, l'Arma non ha ancora fatto ricorso a tale personale né sono state emanate disposizioni attuative in proposito."
+        },
+    
+        {
+            "intent":"forze di completamento",
+            "response":"Gli Ufficiali delle Forze di Completamento, previsti dal Codice dell’ordinamento militare, pubblicato con Decreto Legislativo 15 marzo 2010 nr. 66, sono costituiti dagli Ufficiali in congedo di complemento o in ferma prefissata che, su proposta degli Stati Maggiori o Comandi Generali, previo loro consenso, abbiano effettuato dei periodi di richiamo in servizio per un periodo non superiore ad un anno, rinnovabile una sola volta a domanda dell’interessato.<br> <br> La “Riserva Selezionata” costituisce un particolare settore delle Forze di Completamento. E’ formata dai quei cittadini italiani che, essendo in possesso di spiccate professionalità, non reperibili in ambito militare, e dando ampio affidamento di prestare opera proficua nelle Forze armate, sono nominati ufficiali, fino al grado di maggiore, in funzione dell’età e del ruolo rivestito in campo sociale od economico. In sostanza, si tratta per il personale civile, di una riedizione della “Legge Marconi” (R.D. n. 819 del 16 maggio 1932), finalizzata alle esigenze attuali delle Forze Armate.L’Arma dei Carabinieri attualmente non ricorre a tali forme di reclutamento alternativo, potendo soddisfare le esigenze istituzionali con gli ordinari reclutamenti degli Ufficiali dei vari ruoli in S.P. e degli ufficiali in F.P."
+        },
+    
+        {
+            "intent":"ufficiali in ferma",
+            "response":"A decorrere dall'anno 2003 l'Arma non si avvale più degli ufficiali di complemento di 1^ nomina ma degli ufficiali in ferma prefissata che vengono arruolati previo superamento di specifici corsi “AUFP”, ai quali è possibile accedere tramite concorsi pubblici per titoli ed esami. Tale nuova possibilità di reclutamento è stata istituita dall’art. 23 del Decreto Legislativo 8 maggio 2001 n.215 “Disposizioni per disciplinare la trasformazione progressiva dello strumento militare in professionale, a norma dell’art.3, comma 1 della legge 14 novembre 2000, n.331”, ora recepito dal “Codice dell’ordinamento militare” pubblicato con Decreto Legislativo 15 marzo 2010 nr. 66.La durata della ferma è stabilita in due anni e sei mesi, incluso il periodo di formazione. Al termine di tale Ferma, è possibile partecipare ad appositi concorsi, per soli titoli, per l’ammissione ad un ulteriore ferma di 12 mesi. <p style=\"text-align: center;\">REQUISITI</p> Gli aspiranti all’ammissione ai corsi formativi devono:</p> <ul> { <div style=\"text-align: justify;\">essere cittadini italiani e godere dei diritti civili e politici; }, { <div style=\"text-align: justify;\">non avere superato il 32° anno di età alla data indicata nel bando del concorso; }, { <div style=\"text-align: justify;\">essere in possesso del diploma di istruzione secondaria di secondo grado, per i corsi relativi al ruolo speciale, ovvero del diploma di laurea specialistica, previsto dal bando di concorso, per il ruolo tecnico logistico; }, { <div style=\"text-align: justify;\">possedere l’idoneità fisica al servizio militare incondizionato ed una statura non inferiore a m.1,70 se di sesso maschile, a m. 1,65 se di sesso femminile; }, { <div style=\"text-align: justify;\">non essere stati destituiti, dispensati o dichiarati decaduti dall’impiego in una pubblica amministrazione, licenziati dal lavoro alle dipendenze di pubbliche amministrazioni a seguito di procedimento disciplinare, ovvero prosciolti, d’autorità o d’ufficio, da precedente arruolamento nelle Forze armate o di polizia, a esclusione dei proscioglimenti per inidoneità psico-fisica; }, { <div style=\"text-align: justify;\">ossedere uno specifico profilo attitudinale; }, { <div style=\"text-align: justify;\">aver tenuto condotta incensurabile, non essere stati condannati per delitti non colposi, anche con sentenza di applicazione della pena su richiesta, a pena condizionalmente sospesa o con decreto penale di condanna ovvero non essere in atto imputati in procedimenti penali per delitti non colposi e non essere stati sottoposti a misure di prevenzione.  }, </ul> I bandi di concorso per il reclutamento degli ufficiali in ferma prefissata possono prevedere:</p> <ul> { <div style=\"text-align: justify;\">riserve di posti a favore dei diplomati presso le scuole militari e gli istituti di cui al regio decreto 29 marzo 1943, n. 388, e dei figli di militari deceduti in servizio, nel limite massimo complessivo del trenta per cento dei posti disponibili; }, { <div style=\"text-align: justify;\">la ripartizione dei posti messi a concorso per armi, specialità o specializzazioni. Gli Ufficiali in ferma prefissata possono: }, { <div style=\"text-align: justify;\">presentare domanda per essere collocati in congedo a decorrere dal diciottesimo mese di servizio; }, { <div style=\"text-align: justify;\">partecipare, quando abbiano completato un anno di servizio, ai concorsi per titoli ed esami per il transito nel ruolo speciale o tecnico logistico (servizio permanente). }, </ul>"
+        },
+    
+        {
+           "intent":"ausiliari",
+           "response":"La legge n.331/2000 - Istituzione del servizio militare volontario professionale prevede una nuova categoria di Ufficiali, quella degli Ufficiali Ausiliari. <br> Essi riguardano ciascuna Forza Armata, ed il Corpo della Guardia di Finanza e vengono reclutati annualmente secondo le disponibilità in bilancio ed in funzione delle esigenze operative del momento.<br> Il nuovo decreto legislativo n. 215 dell'8 maggio 2001 Disposizioni per disciplinare la trasformazione progressiva dello strumento militare in professionale, a norma dell'art.3, comma1 della legge 14 nov.2000, n.331 stabilisce che la categoria degli Ufficiali Ausiliari interessa i cittadini di ambo i sessi e comprende: <br> <br> </p> <ul> { <div style=\"text-align: justify;\">gli Ufficiali di complemento in servizio di prima nomina (in atto con il servizio di leva fino al 2006 per i giovani nati entro il 1985) e in ferma o rafferma biennale, reclutati ai sensi della normativa vigente, o dal congedo;  }, { <div style=\"text-align: justify;\">gli Ufficiali piloti di complemento reclutati ai sensi dei titoli II e III della legge n.224 del 19 maggio 1986;  }, { <div style=\"text-align: justify;\">Ufficiali in ferma prefissata o in rafferma;  }, { <div style=\"text-align: justify;\">Ufficiali delle Forze di Completamento. }, </ul>"  
+        },
+    
+        {
+           "intent":"limiti di altezza",
+           "response":"I limiti di altezza per la partecipazione ai concorsi pubblici per il reclutamento del personale dell'Arma dei Carabinieri sono stabiliti dal D.P.C.M. 22 luglio 1987, n. 411 - modificato dal D.P.C.M. 16 marzo 2000, n. 112. In particolare è stabilito il limite minimo di m. 1,70 per gli uomini e 1,65 per le donne per i ruoli degli ufficiali e m. 1,65 per gli uomini e 1,61 per le donne per gli arruolamenti di marescialli e carabinieri."response":"
+        },
+    
+        {
+           "intent":"obiettore di coscienza",
+           "response":"L’obiettore di coscienza può partecipare ai concorsi per l’arruolamento nei Carabinieri solo se rinunzia allo status di “obiettore di coscienza”, secondo quando previsto dall’articolo 15, commi 7-bis e 7-ter, della Legge 8 luglio 1998 n.230 “Nuove norme in materia di obiezione di coscienza”, modificato dall’articolo 1 della Legge 2 agosto 2007 n.130 “Modifiche alla L. 8 luglio 1998, n. 230, in materia di obiezione di coscienza”."
+        },
+    
+        {
+           "intent":"coniugati",
+           "response":"Si, infatti, l'art. 12 del D.Lgs. 236/2003 ha disposto l'abrogazione di tutte le disposizioni che prevedevano lo stato di celibe o di vedovo quale requisito per il reclutamento."
+        },
+    
+        {
+           "intent":"prossimi bandi",
+           "response":"Atteso che i concorsi per l’arruolamento nell’Arma dei Carabinieri non vengono pubblicati con cadenza prestabilita, per conoscere tutte le novità concorsuali è possibile consultare periodicamente il “Calendario Concorsi” al seguente link <a href=\"/Internet/Concorsi/\">http://www.carabinieri.it/Internet/Concorsi/</a>, nonché iscriversi al servizio di newsletter, che permette di ricevere aggiornamenti anche sui concorsi, tramite il seguente link <a href=\"http://community.carabinieri.it/on-line/Home/Community/Newsletter.html\">http://community.carabinieri.it/on-line/Home/Community/Newsletter.html</a>."
+        },
+    
+        {
+            "inetnt":"arruolamento donne",
+            "response":"Tutti i bandi di concorso pubblicati per il reclutamento nell'Arma dei Carabinieri sono aperti ai cittadini italiani di entrambi i sessi."
+        }
+       ] 
+}
