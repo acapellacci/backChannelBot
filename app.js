@@ -14,15 +14,23 @@ var recognizer = new builder.LuisRecognizer('https://westus.api.cognitive.micros
 bot.recognizer(recognizer);
 
 bot.dialog('saluto', function (session) {
-    session.endDialog('Ciao, sono il tuo assistente personale.');
+    session.send('Ciao, sono il tuo assistente personale.');
 }).triggerAction({
     matches: 'saluto'
+});
+
+bot.dialog('atletica', function (session) {
+    var reply = createEvent("changeBackground", 'blue', session.message.address);
+    session.send(reply);
+    session.send('Le modalità di accesso alla struttura sportiva dell\'Arma sono disciplinate dal....');
+}).triggerAction({
+    matches: 'atletica'
 });
 
 //Basic root dialog which takes an inputted color and sends a changeBackground event. No NLP, regex, validation here - just grabs input and sends it back as an event. 
 bot.dialog('/', [
     function (session) {
-        var reply = createEvent("changeBackground", session.message.text, session.message.address);
+        var reply = createEvent("changeBackground", 'red', session.message.address);
         session.endDialog(reply);
     }
 ]);
