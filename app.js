@@ -14,6 +14,8 @@ var recognizer = new builder.LuisRecognizer('https://westus.api.cognitive.micros
 bot.recognizer(recognizer);
 
 bot.dialog('saluto', function (session) {
+    var reply = createEvent("changeBackground", 'blue', session.message.address);
+    session.send(reply);
     session.send('Ciao, sono il tuo assistente personale.');
 }).triggerAction({
     matches: 'saluto'
@@ -27,13 +29,21 @@ bot.dialog('atletica', function (session) {
     matches: 'atletica'
 });
 
-//Basic root dialog which takes an inputted color and sends a changeBackground event. No NLP, regex, validation here - just grabs input and sends it back as an event. 
-bot.dialog('/', [
-    function (session) {
-        var reply = createEvent("changeBackground", 'red', session.message.address);
-        session.endDialog(reply);
-    }
-]);
+bot.dialog('corazzieri', function (session) {
+    var reply = createEvent("changeBackground", 'red', session.message.address);
+    session.send(reply);
+    session.send('Per entrare a far parte dei Corazzieri è innanzitutto necessario arruolarsi nell\'Arma e successivamente partecipare a selezioni interne.');
+}).triggerAction({
+    matches: 'corazzieri'
+});
+
+bot.dialog('None', function (session) {
+    var reply = createEvent("changeBackground", 'white', session.message.address);
+    session.send(reply);
+    session.send('Non ho capito');
+}).triggerAction({
+    matches: 'None'
+});
 
 //Creates a backchannel event
 const createEvent = (eventName, value, address) => {
