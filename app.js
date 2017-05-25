@@ -60,7 +60,10 @@ bot.dialog('corazzieri', function (session) {
 bot.dialog('presentazione', function (session) {
     session.say('Mi presento','Mi presento');
     session.say('Sono il nuovo Assistente Virtuale dell\'Arma dei Carabinieri', 'Sono il nuovo Assistente Virtuale dell\'Arma dei Carabinieri');
-    session.speak('Sostituisco la collega');
+    var msg = new builder.Message(session)
+    .speak('Sostituisco la collega')
+    .inputHint(builder.InputHint.acceptingInput);
+    session.send(msg);
     session.say('Sostituisco la collega','Sostituisco la collega');
     session.send({
             attachments: [
