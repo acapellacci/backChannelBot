@@ -58,10 +58,10 @@ bot.dialog('corazzieri', function (session) {
 });
 
 bot.dialog('presentazione', function (session) {
-    session.send('Mi presento');
-    session.send('Sono il nuovo Assistente Virtuale dell\'Arma dei Carabinieri');
+    session.say('Mi presento','Mi presento');
+    session.say('Sono il nuovo Assistente Virtuale dell\'Arma dei Carabinieri', 'Sono il nuovo Assistente Virtuale dell\'Arma dei Carabinieri');
+    session.say('Sostituisco la collega','Sostituisco la collega');
     session.send({
-            text: "Sostituisco la collega",
             attachments: [
                 {
                     contentType: "image/jpeg",
