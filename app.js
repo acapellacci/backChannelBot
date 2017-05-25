@@ -57,7 +57,7 @@ bot.dialog('corazzieri', function (session) {
     matches: 'corazzieri'
 });
 
-bot.dialog('aiuto', function (session) {
+bot.dialog('presentazione', function (session) {
     session.send('Mi presento');
     session.send('Sono il nuovo Assistente Virtuale dell\'Arma dei Carabinieri');
     session.send({
@@ -85,7 +85,7 @@ bot.dialog('aiuto', function (session) {
         }, 4000);
     }, 4000);
 }).triggerAction({
-    matches: 'aiuto'
+    matches: 'presentazione'
 });
 
 //Creates a backchannel event
