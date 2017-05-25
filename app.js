@@ -18,7 +18,7 @@ bot.recognizer(recognizer);
 bot.dialog('saluto', function (session) {
     var reply = createEvent("changeBackground", 'white', session.message.address);
     session.send(reply);
-    session.send('Ciao, sono il tuo assistente personale.');
+    session.send('Ciao, come posso aiutarti?');
 }).triggerAction({
     matches: 'saluto'
 });
