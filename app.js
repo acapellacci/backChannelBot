@@ -1,6 +1,6 @@
 require('./connectorSetup.js')();
 
-const DIALOG_KEY = 'DIALOG_KEY';
+var UserWelcomedKey = 'UserWelcomed';
 
 var JsonPath = require('jsonpath');
 var faqs = require('./faqs.json');
@@ -21,12 +21,13 @@ bot.dialog('saluto', function (session) {
     var reply = createEvent("changeBackground", 'white', session.message.address);
     session.send(reply);
     
-    if (!session.conversationData[DIALOG_KEY]) {
-        session.endDialog('Ciao, come posso aiutarti?');
-        session.conversationData[DIALOG_KEY] = session.userData.name;
+    if (!session.privateConversationData[UserWelcomedKey]) {
+        session.privateConversationData[UserWelcomedKey] = true;
+        return session.send('Ciao, come posso aiutarti?');
     } else {
         session.endDialog('Ben tornato, come posso aiutarti adesso?');
     }
+
 }).triggerAction({
     matches: 'saluto'
 });
@@ -35,6 +36,7 @@ bot.dialog('chiusura', function (session) {
     var reply = createEvent("changeBackground", 'white', session.message.address);
     session.send(reply);
     session.endConversation('Grazie per averci contattato.');
+    session.privateConversationData[UserWelcomedKey] = false;
 }).triggerAction({
     matches: 'chiusura'
 });
