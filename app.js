@@ -7,9 +7,9 @@ var faqs = require('./faqs.json');
 //Bot listening for inbound backchannel events - in this case it only listens for events named "buttonClicked"
 bot.on("event", function (event) {
     var msg = new builder.Message().address(event.address);
-    msg.textLocale("en-us");
+    msg.textLocale("it-IT");
     if (event.name === "buttonClicked") {
-        msg.text("I see that you just pushed that button");
+        msg.text("Hai cliccato sul bottone");
     }
     bot.send(msg);
 })
@@ -17,7 +17,7 @@ bot.on("event", function (event) {
 var recognizer = new builder.LuisRecognizer('https://westus.api.cognitive.microsoft.com/luis/v2.0/apps/bb31143e-7f94-4838-aeb3-02b399603fbf?subscription-key=eb17b4ee1a45442c909a3779fcfd00c1');
 bot.recognizer(recognizer);
 
-bot.dialog('saluto', function (session) {
+bot.dialog('apertura', function (session) {
     var reply = createEvent("changeBackground", 'white', session.message.address);
     session.send(reply);
     
@@ -29,7 +29,7 @@ bot.dialog('saluto', function (session) {
     }
 
 }).triggerAction({
-    matches: 'saluto'
+    matches: 'apertura'
 });
 
 bot.dialog('chiusura', function (session) {
