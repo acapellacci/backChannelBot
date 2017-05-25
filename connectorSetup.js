@@ -9,8 +9,9 @@ module.exports = function() {
            gzipData: true
         });
 
-    global.bot = new builder.UniversalBot(connector);
-
+    global.bot = new builder.UniversalBot(connector, function (session) {
+        session.send('Non ho capito.');
+    });
     // Setup Restify Server
     var server = restify.createServer();
     server.listen(process.env.port || 3978, function () {

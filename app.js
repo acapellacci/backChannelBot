@@ -26,7 +26,7 @@ bot.dialog('saluto', function (session) {
 bot.dialog('atletica', function (session) {
     var reply = createEvent("changeBackground", 'blue', session.message.address);
     session.send(reply);
-    session.send(retrieveResponse('atletica'));
+    session.endDialog(retrieveResponse('atletica'));
 }).triggerAction({
     matches: 'atletica'
 });
@@ -34,15 +34,9 @@ bot.dialog('atletica', function (session) {
 bot.dialog('corazzieri', function (session) {
     var reply = createEvent("changeBackground", 'red', session.message.address);
     session.send(reply);
-    session.send(retrieveResponse('corazzieri'));
+    session.endDialog(retrieveResponse('corazzieri'));
 }).triggerAction({
     matches: 'corazzieri'
-});
-
-bot.dialog('None', function (session) {
-    session.send('Non ho capito');
-}).triggerAction({
-    matches: 'None'
 });
 
 //Creates a backchannel event
