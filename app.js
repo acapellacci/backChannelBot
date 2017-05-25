@@ -65,19 +65,25 @@ bot.dialog('aiuto', function (session) {
             attachments: [
                 {
                     contentType: "image/jpeg",
-                    contentUrl: "http://localhost:8000/media/",
+                    contentUrl: "http://localhost:8000/media/virtual_assistant_carabinieri.jpg",
                     name: "virtual_assistant_carabinieri.jpg"
                 }
             ]
         });
     session.send('Spero di essere alla sua altezza');
     session.send('Ora ti mostro qualche novità');
-    session.send('Per ogni argomento trattato la mia veste grafica cambierà mostrandoti immagini e video attinenti il tema trattato. Per esempio quando parleremo di Corazzieri lo schermo si colorerà di rosso');
-    var reply = createEvent("changeBackground", 'red', session.message.address);
-    session.send(reply);
-    session.send('');
-    reply = createEvent("changeBackground", 'white', session.message.address);
-    session.endDialog('Ora non mi rimane che rispondere alle tue domande.');
+    setTimeout(function() {
+            session.send('Per ogni argomento trattato la mia veste grafica cambierà mostrandoti immagini e video attinenti il tema trattato. Per esempio quando parleremo di Corazzieri lo schermo si colorerà di rosso.');
+            var reply = createEvent("changeBackground", 'red', session.message.address);
+            session.send(reply);
+            setTimeout(function() {
+                var reply = createEvent("changeBackground", 'white', session.message.address);
+                session.send(reply);
+                setTimeout(function() {
+                    session.endDialog('Ora non mi rimane che rispondere alle tue domande.');
+                }, 2000);
+            }, 2000);
+        }, 2000);
 }).triggerAction({
     matches: 'aiuto'
 });
