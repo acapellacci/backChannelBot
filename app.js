@@ -52,7 +52,7 @@ bot.dialog('/', function (session) {
     session.send(reply);
     session.send('Non ho capito');
 }).triggerAction({
-    matches: 'None'
+    matches: '/'
 });
 
 //Creates a backchannel event
