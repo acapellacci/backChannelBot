@@ -1,5 +1,7 @@
 require('./connectorSetup.js')();
 
+const DIALOG_KEY = 'DIALOG_KEY';
+
 var JsonPath = require('jsonpath');
 var faqs = require('./faqs.json');
 //Bot listening for inbound backchannel events - in this case it only listens for events named "buttonClicked"
@@ -18,7 +20,13 @@ bot.recognizer(recognizer);
 bot.dialog('saluto', function (session) {
     var reply = createEvent("changeBackground", 'white', session.message.address);
     session.send(reply);
-    session.endDialog('Ciao, come posso aiutarti?');
+    
+    if (!session.conversationData[DIALOG_KEY]) {
+        session.endDialog('Ciao, come posso aiutarti?');
+        session.conversationData[DIALOG_KEY] = session.userData.name;
+    } else {
+        session.endDialog('Ben tornato, come posso aiutarti adesso?');
+    }
 }).triggerAction({
     matches: 'saluto'
 });

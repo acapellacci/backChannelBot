@@ -19,5 +19,5 @@ module.exports = function() {
     });
     server.post('/api/messages', connector.listen());
     bot.use(builder.Middleware.dialogVersion({ version: 0.2, resetCommand: /^reset/i }));
-
+    bot.set('persistConversationData', true);
 }
