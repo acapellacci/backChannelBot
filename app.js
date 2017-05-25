@@ -39,13 +39,9 @@ bot.dialog('corazzieri', function (session) {
     matches: 'corazzieri'
 });
 
-bot.onDefault(
-   function (session, args, next) {
-        var reply = createEvent("changeBackground", 'white', session.message.address);
-    session.send(reply);
+bot.dialog('None', function (session) {
     session.send('Non ho capito');
-   }
-);
+});
 
 //Creates a backchannel event
 const createEvent = (eventName, value, address) => {
