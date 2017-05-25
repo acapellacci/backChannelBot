@@ -17,7 +17,7 @@ var recognizer = new builder.LuisRecognizer('https://westus.api.cognitive.micros
 bot.recognizer(recognizer);
 
 bot.dialog('saluto', function (session) {
-    var reply = createEvent("changeBackground", 'blue', session.message.address);
+    var reply = createEvent("changeBackground", 'white', session.message.address);
     session.send(reply);
     session.send('Ciao, sono il tuo assistente personale.');
 }).triggerAction({
@@ -58,7 +58,10 @@ const createEvent = (eventName, value, address) => {
 }
 
 function retrieveResponse(intent) {
-    var response = _.first(JsonPath.query(faqs, '$.faqs[*].intent === "' + intent + '"'));
+    var response = _.first(JsonPath.query(faqs, '$.faqs.responses[?(@.intent === "' + intent + '")].response'));
+    if (response) {
+        response = 'Spiegati meglio'
+    }
     return response;
 }
 

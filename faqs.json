@@ -1,5 +1,6 @@
 {
-        "faqs":[    
+    "faqs":{
+        "responses":[    
         {      
               "intent":"atletica",
               "response":"Le modalità di accesso alla struttura sportiva dell'Arma sono disciplinate dal D.P.R. n. 83/2004 pubblicato sulla Gazzetta Ufficiale n. 76 del 31 marzo 2004 che ha previsto una nuova specifica procedura per tali speciali arruolamenti. In attuazione di tali disposizioni il reclutamento è realizzato tramite bando di concorso annuale, pubblicato in Gazzetta Ufficiale, nel quale sono indicate le specialità d'interesse ed il numero dei posti messi a concorso. Oltre ai requisiti necessari per l'arruolamento nell'Arma dei Carabinieri di cui all'art. 5 del D.Lgs. 12 maggio 1995, n. 198 e successive modificazioni, i candidati devono aver conseguito nell'anno precedente, nella disciplina prescelta, risultati agonistici di livello nazionale certificati dal C.O.N.I. o dalle Federazioni sportive nazionali. Alla valutazione dei titoli provvede una Commissione esaminatrice nominata dal Comandante Generale."
@@ -77,7 +78,7 @@
     
         {
            "intent":"limiti di altezza",
-           "response":"I limiti di altezza per la partecipazione ai concorsi pubblici per il reclutamento del personale dell'Arma dei Carabinieri sono stabiliti dal D.P.C.M. 22 luglio 1987, n. 411 - modificato dal D.P.C.M. 16 marzo 2000, n. 112. In particolare è stabilito il limite minimo di m. 1,70 per gli uomini e 1,65 per le donne per i ruoli degli ufficiali e m. 1,65 per gli uomini e 1,61 per le donne per gli arruolamenti di marescialli e carabinieri."response":"
+           "response":"I limiti di altezza per la partecipazione ai concorsi pubblici per il reclutamento del personale dell'Arma dei Carabinieri sono stabiliti dal D.P.C.M. 22 luglio 1987, n. 411 - modificato dal D.P.C.M. 16 marzo 2000, n. 112. In particolare è stabilito il limite minimo di m. 1,70 per gli uomini e 1,65 per le donne per i ruoli degli ufficiali e m. 1,65 per gli uomini e 1,61 per le donne per gli arruolamenti di marescialli e carabinieri."
         },
     
         {
@@ -100,4 +101,5 @@
             "response":"Tutti i bandi di concorso pubblicati per il reclutamento nell'Arma dei Carabinieri sono aperti ai cittadini italiani di entrambi i sessi."
         }
        ] 
+    }
 }
