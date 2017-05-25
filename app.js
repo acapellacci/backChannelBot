@@ -18,9 +18,17 @@ bot.recognizer(recognizer);
 bot.dialog('saluto', function (session) {
     var reply = createEvent("changeBackground", 'white', session.message.address);
     session.send(reply);
-    session.send('Ciao, come posso aiutarti?');
+    session.endDialog('Ciao, come posso aiutarti?');
 }).triggerAction({
     matches: 'saluto'
+});
+
+bot.dialog('chiusura', function (session) {
+    var reply = createEvent("changeBackground", 'white', session.message.address);
+    session.send(reply);
+    session.endConversation('Grazie per averci contattato.');
+}).triggerAction({
+    matches: 'chiusura'
 });
 
 bot.dialog('atletica', function (session) {
