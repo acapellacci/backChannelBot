@@ -2,7 +2,6 @@ require('./connectorSetup.js')();
 
 var JsonPath = require('jsonpath');
 var faqs = require('./faqs.json');
-
 //Bot listening for inbound backchannel events - in this case it only listens for events named "buttonClicked"
 bot.on("event", function (event) {
     var msg = new builder.Message().address(event.address);
@@ -58,9 +57,12 @@ const createEvent = (eventName, value, address) => {
 }
 
 function retrieveResponse(intent) {
-    var response = _.first(JsonPath.query(faqs, '$.faqs.responses[?(@.intent === "' + intent + '")].response'));
+    var output = "";
+    var response = JsonPath.query(faqs, '$.faqs.responses[?(@.intent === "' + intent + '")].response')[0];
     if (response) {
-        response = 'Spiegati meglio'
+        output = response[0];
+    } else {
+        output = 'Spiegati meglio';
     }
     return response;
 }
