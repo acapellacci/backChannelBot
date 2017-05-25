@@ -47,6 +47,14 @@ bot.dialog('None', function (session) {
     matches: 'None'
 });
 
+bot.dialog('/', function (session) {
+    var reply = createEvent("changeBackground", 'white', session.message.address);
+    session.send(reply);
+    session.send('Non ho capito');
+}).triggerAction({
+    matches: 'None'
+});
+
 //Creates a backchannel event
 const createEvent = (eventName, value, address) => {
     var msg = new builder.Message().address(address);
