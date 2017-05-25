@@ -41,6 +41,8 @@ bot.dialog('corazzieri', function (session) {
 
 bot.dialog('None', function (session) {
     session.send('Non ho capito');
+}).triggerAction({
+    matches: 'None'
 });
 
 //Creates a backchannel event
@@ -54,13 +56,13 @@ const createEvent = (eventName, value, address) => {
 
 function retrieveResponse(intent) {
     var output = "";
-    var response = JsonPath.query(faqs, '$.faqs.responses[?(@.intent === "' + intent + '")].response')[0];
+    var response = JsonPath.query(faqs, '$.faqs.responses[?(@.intent === "' + intent + '")].response');
     if (response) {
         output = response[0];
     } else {
         output = 'Spiegati meglio';
     }
-    return response;
+    return output;
 }
 
 
