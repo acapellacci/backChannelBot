@@ -70,18 +70,21 @@ bot.dialog('presentazione', function (session) {
                 }
             ]
         });
-    session.endDialog('Spero di essere alla sua altezza');
-    waitingFor(10000);
-    session.endDialog('Ora ti mostro qualche novità');
-    waitingFor(10000);
-    session.send('Per ogni argomento trattato la mia veste grafica cambierà mostrandoti immagini e video attinenti il tema trattato. Per esempio quando parleremo di Corazzieri lo schermo si colorerà di rosso.');
-    var reply = createEvent("changeBackground", 'red', session.message.address);
-    session.endDialog(reply);
-    waitingFor(10000);
-    var reply = createEvent("changeBackground", 'white', session.message.address);
-    session.send(reply);
-    session.endDialog('Ora non mi rimane che rispondere alle tue domande.');
-    waitingFor(10000);    
+    session.send('Spero di essere alla sua altezza');
+    setTimeout(function () {
+        session.send('Ora ti mostro qualche novità');
+        setTimeout(function () {
+            session.send('Per ogni argomento trattato la mia veste grafica cambierà mostrandoti immagini e video attinenti il tema trattato. Per esempio quando parleremo di Corazzieri lo schermo si colorerà di rosso.');
+            var reply = createEvent("changeBackground", 'red', session.message.address);
+            session.send(reply);
+            setTimeout(function () {
+                var reply = createEvent("changeBackground", 'white', session.message.address);
+                session.send(reply);
+                session.endDialog('Ora non mi rimane che rispondere alle tue domande.');  
+            }, 5000); 
+        }, 5000);
+    }, 5000);
+    
 }).triggerAction({
     matches: 'presentazione'
 });
