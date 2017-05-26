@@ -70,13 +70,13 @@ bot.dialog('presentazione', function (session) {
                 }
             ]
         });
-    session.send('Spero di essere alla sua altezza');
+    session.endDialog('Spero di essere alla sua altezza');
     waitingFor(10000);
-    session.send('Ora ti mostro qualche novità');
+    session.endDialog('Ora ti mostro qualche novità');
     waitingFor(10000);
     session.send('Per ogni argomento trattato la mia veste grafica cambierà mostrandoti immagini e video attinenti il tema trattato. Per esempio quando parleremo di Corazzieri lo schermo si colorerà di rosso.');
     var reply = createEvent("changeBackground", 'red', session.message.address);
-    session.send(reply);
+    session.endDialog(reply);
     waitingFor(10000);
     var reply = createEvent("changeBackground", 'white', session.message.address);
     session.send(reply);
