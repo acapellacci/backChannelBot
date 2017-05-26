@@ -59,8 +59,11 @@ bot.dialog('corazzieri', function (session) {
 
 bot.dialog('presentazione', function (session) {
     session.send('Mi presento');
+    waitingFor(5000);
     session.send('Sono il nuovo Assistente Virtuale dell\'Arma dei Carabinieri.');
+    waitingFor(5000);
     session.send('Sostituisco la collega','Sostituisco la collega');
+    waitingFor(5000);
     session.send({
             attachments: [
                 {
@@ -109,3 +112,17 @@ function retrieveResponse(intent) {
     return output;
 }
 
+function waitingFor(delay) {
+    var wait = true;
+    var currentTime = Date().getTime();
+    setTimeout(function() {
+        wait = false;
+    }, delay);
+
+    while (wait) {
+        var now = Date().getTime();
+        if (now - currentTime > 20 * 1000) {
+            break;
+        }
+    }
+}
