@@ -17,6 +17,8 @@ bot.on("event", function (event) {
 var recognizer = new builder.LuisRecognizer('https://westus.api.cognitive.microsoft.com/luis/v2.0/apps/bb31143e-7f94-4838-aeb3-02b399603fbf?subscription-key=eb17b4ee1a45442c909a3779fcfd00c1');
 bot.recognizer(recognizer);
 
+waitingFor(5000);
+
 bot.dialog('apertura', function (session) {
     var reply = createEvent("changeBackground", 'white', session.message.address);
     session.send(reply);
@@ -59,11 +61,8 @@ bot.dialog('corazzieri', function (session) {
 
 bot.dialog('presentazione', function (session) {
     session.send('Mi presento');
-    waitingFor(5000);
     session.send('Sono il nuovo Assistente Virtuale dell\'Arma dei Carabinieri.');
-    waitingFor(5000);
     session.send('Sostituisco la collega','Sostituisco la collega');
-    waitingFor(5000);
     session.send({
             attachments: [
                 {
@@ -74,20 +73,17 @@ bot.dialog('presentazione', function (session) {
             ]
         });
     session.send('Spero di essere alla sua altezza');
-    setTimeout(function() {
-        session.send('Ora ti mostro qualche novità');
-        setTimeout(function() {
-            session.send('Per ogni argomento trattato la mia veste grafica cambierà mostrandoti immagini e video attinenti il tema trattato. Per esempio quando parleremo di Corazzieri lo schermo si colorerà di rosso.');
-            var reply = createEvent("changeBackground", 'red', session.message.address);
-            session.send(reply);
-            setTimeout(function() {
-                var reply = createEvent("changeBackground", 'white', session.message.address);
-                session.send(reply);
-                session.endDialog('Ora non mi rimane che rispondere alle tue domande.');
-            }, 5000);
-        }, 5000);
-    }, 5000);
-    
+    waitingFor(5000);
+    session.send('Ora ti mostro qualche novità');
+    waitingFor(5000);
+    session.send('Per ogni argomento trattato la mia veste grafica cambierà mostrandoti immagini e video attinenti il tema trattato. Per esempio quando parleremo di Corazzieri lo schermo si colorerà di rosso.');
+    var reply = createEvent("changeBackground", 'red', session.message.address);
+    session.send(reply);
+    waitingFor(5000);
+    var reply = createEvent("changeBackground", 'white', session.message.address);
+    session.send(reply);
+    session.endDialog('Ora non mi rimane che rispondere alle tue domande.');
+    waitingFor(5000);    
 }).triggerAction({
     matches: 'presentazione'
 });
@@ -114,15 +110,16 @@ function retrieveResponse(intent) {
 
 function waitingFor(delay) {
     var wait = true;
-    var currentTime = Date().getTime();
-    setTimeout(function() {
-        wait = false;
-    }, delay);
+
+    var carrentDate = new Date();
+    var currentTime = carrentDate.getTime();
 
     while (wait) {
-        var now = Date().getTime();
-        if (now - currentTime > 20 * 1000) {
+        var nowDate = new Date();
+        var nowTime = nowDate.getTime();
+        if (((nowTime - currentTime) > delay) && ((nowTime - currentTime) < 20 * 1000)) {
             break;
         }
     }
+
 }
