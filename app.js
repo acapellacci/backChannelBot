@@ -109,13 +109,13 @@ function retrieveResponse(intent) {
 function waitingFor(delay) {
     var wait = true;
 
-    var carrentDate = new Date();
-    var currentTime = carrentDate.getTime();
+    var currentDate = new Date();
+    var currentTime = currentDate.getTime();
 
     while (wait) {
         var nowDate = new Date();
         var nowTime = nowDate.getTime();
-        if (((nowTime - currentTime) > delay) && ((nowTime - currentTime) < 20 * 1000)) {
+        if (((nowTime - currentTime) > delay) || ((nowTime - currentTime) > 20 * 1000)) {
             break;
         }
     }
