@@ -39,6 +39,7 @@ bot.dialog('chiusura', function (session) {
 });
 
 bot.dialog('faqs', function (session, args, next) {
+    session.send('ecco la risposta');
     session.endDialog(retrieveResponse(args.intent));
 }).triggerAction({
     matches: intents
@@ -95,20 +96,4 @@ function retrieveResponse(intent) {
         output = 'Spiegati meglio';
     }
     return output;
-}
-
-function waitingFor(delay) {
-    var wait = true;
-
-    var currentDate = new Date();
-    var currentTime = currentDate.getTime();
-
-    while (wait) {
-        var nowDate = new Date();
-        var nowTime = nowDate.getTime();
-        if (((nowTime - currentTime) > delay) || ((nowTime - currentTime) > 20 * 1000)) {
-            break;
-        }
-    }
-
 }
