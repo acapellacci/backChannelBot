@@ -7,12 +7,12 @@
         },
     
         {
-              "intent":"patrimonio_culturale",
+              "intent":"patrimonio culturale",
               "response":"Per far parte del Comando Carabinieri Tutela Patrimonio Culturale, è necessario essere preventivamente arruolati nell'Arma, aderire ad apposita interpellanza (è richiesta esperienza di polizia giudiziaria e possesso di adeguato titolo di studio, minimo di scuola secondaria, con indirizzo classico) e frequentare uno specifico corso addestrativo (tenuto da storici dell'arte e da funzionari del Ministero per i Beni e le Attività Culturali), al termine del quale si ottiene la relativa specializzazione."
         },
     
         {   
-              "intent":"sofisticazioni_alimentari",
+              "intent":"sofisticazioni alimentari",
               "response":"Per far parte del Comando Carabinieri per la Sanità (NAS) è necessario essere preventivamente arruolati nell'Arma tramite concorso pubblico. Dopo alcuni anni di servizio effettivo è possibile aderire ad apposita interpellanza interna previa verifica del possesso degli specifici requisiti richiesti ed indicati nell'interpellanza stessa, all'atto della sua diramazione. Successivamente, a seguito di specifico corso di qualificazione, il militare viene destinato presso uno dei N.A.S. dislocati sul territorio nazionale."
         },
     

@@ -4,6 +4,8 @@ var UserWelcomedKey = 'UserWelcomed';
 var JsonPath = require('jsonpath');
 var faqs = require('./faqs.json');
 
+var intents = JsonPath.query(faqs, '$.faqs.responses[?(@.intent != "")].intent');
+
 //Bot listening for inbound backchannel events - in this case it only listens for events named "buttonClicked"
 bot.on("event", function (event) {
     var msg = new builder.Message().address(event.address);
@@ -18,9 +20,6 @@ var recognizer = new builder.LuisRecognizer('https://westus.api.cognitive.micros
 bot.recognizer(recognizer);
 
 bot.dialog('apertura', function (session) {
-    var reply = createEvent("changeBackground", 'white', session.message.address);
-    session.send(reply);
-    
     if (!session.privateConversationData[UserWelcomedKey]) {
         session.privateConversationData[UserWelcomedKey] = true;
         return session.endDialog('Ciao, come posso aiutarti?');
@@ -33,28 +32,16 @@ bot.dialog('apertura', function (session) {
 });
 
 bot.dialog('chiusura', function (session) {
-    var reply = createEvent("changeBackground", 'white', session.message.address);
-    session.send(reply);
     session.endConversation('Grazie per averci contattato.');
     session.privateConversationData[UserWelcomedKey] = false;
 }).triggerAction({
     matches: 'chiusura'
 });
 
-bot.dialog('atletica', function (session) {
-    var reply = createEvent("changeBackground", 'blue', session.message.address);
-    session.send(reply);
-    session.endDialog(retrieveResponse('atletica'));
+bot.dialog('faqs', function (session, args, next) {
+    session.endDialog(retrieveResponse(args.intent));
 }).triggerAction({
-    matches: 'atletica'
-});
-
-bot.dialog('corazzieri', function (session) {
-    var reply = createEvent("changeBackground", 'red', session.message.address);
-    session.send(reply);
-    session.endDialog(retrieveResponse('corazzieri'));
-}).triggerAction({
-    matches: 'corazzieri'
+    matches: intents
 });
 
 bot.dialog('presentazione', function (session) {
