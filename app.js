@@ -38,8 +38,8 @@ bot.dialog('chiusura', function (session) {
     matches: 'chiusura'
 });
 
-bot.dialog('faqs', function (session, args, next) {
-    session.send(args);
+bot.dialog('faqs', function (session) {
+    session.send('Intent: ' + bot.args.intent);
     session.endDialog();
 }).triggerAction({
     matches: intents
