@@ -39,7 +39,7 @@ bot.dialog('chiusura', function (session) {
 });
 
 bot.dialog('faqs', function (session, args, next) {
-    session.send(retrieveResponse(args.intent));
+    session.send(args.intent);
     session.endDialog();
 }).triggerAction({
     matches: intents
