@@ -39,7 +39,7 @@ bot.dialog('chiusura', function (session) {
 });
 
 bot.dialog('faqs', function (session, args, next) {
-    session.endDialog('entities: ' + args.intent.matched[0]);
+    session.endDialog('entities: ' + args.Entities);
 }).triggerAction({
     matches: intents
 });
