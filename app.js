@@ -20,6 +20,8 @@ bot.on("event", function (event) {
 var recognizer = new builder.LuisRecognizer('https://westus.api.cognitive.microsoft.com/luis/v2.0/apps/bb31143e-7f94-4838-aeb3-02b399603fbf?subscription-key=eb17b4ee1a45442c909a3779fcfd00c1');
 bot.recognizer(recognizer);
 
+var timer;
+
 bot.dialog('apertura', function (session) {
     if (!session.privateConversationData[UserWelcomedKey]) {
         session.privateConversationData[UserWelcomedKey] = true;
@@ -28,12 +30,11 @@ bot.dialog('apertura', function (session) {
         session.send('Ben tornato, come posso aiutarti adesso?');
     }
 
-    var timer = setTimeout(function(){
+    timer = setTimeout(function(){
         var reply = createEvent("changeBackground", session.message.text, session.message.address);
-        session.endDialog("Dialog timedout");
+        session.endDialog("Dialog timed out");
     },10000);
 
-    alert(timer);
     session.privateConversationData[DialogTimer] = timer;
 
 }).triggerAction({
@@ -41,8 +42,6 @@ bot.dialog('apertura', function (session) {
 });
 
 bot.dialog('chiusura', function (session) {
-    var timer = session.privateConversationData[DialogTimer];
-    alert(timer);
     clearTimeout(timer);
     session.endConversation('Grazie per averci contattato.');
     session.privateConversationData[UserWelcomedKey] = false;
@@ -51,7 +50,6 @@ bot.dialog('chiusura', function (session) {
 });
 
 bot.dialog('faqs', function (session, args, next) {
-    var timer = session.privateConversationData[DialogTimer];
     clearTimeout(timer);
     session.endDialog(retrieveResponse(args.intent.intent));
     //args.intent.score - it contains the score value
@@ -60,7 +58,6 @@ bot.dialog('faqs', function (session, args, next) {
 });
 
 bot.dialog('presentazione', function (session) {
-    var timer = session.privateConversationData[DialogTimer];
     clearTimeout(timer);
     session.send('Mi presento');
     session.send('Sono il nuovo Assistente Virtuale dell\'Arma dei Carabinieri.');
