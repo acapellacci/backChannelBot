@@ -2,6 +2,7 @@ require('./connectorSetup.js')();
 
 var UserWelcomedKey = 'UserWelcomed';
 var AvatarReminder = 'AvatarReminder';
+var AvatarApertura = 'AvatarApertura';
 var AvatarPresentation = 'AvatarPresentation';
 var JsonPath = require('jsonpath');
 var faqs = require('./faqs.json');
@@ -13,6 +14,16 @@ bot.recognizer(recognizer);
 
 //TODOS - timer must be a user variable;
 var timer;
+
+//Bot listening for inbound backchannel events
+bot.on("event", function (event) {
+    var msg = new builder.Message().address(event.address);
+    msg.textLocale("it-IT");
+    if (event.name === AvatarApertura) {
+        msg.text("Ciao, sono il nuovo Assistente Virtuale dell'Arma dei Carabinieri");
+    }
+    bot.send(msg);
+});
 
 bot.dialog('apertura', function (session) {
     if (!session.privateConversationData[UserWelcomedKey]) {
