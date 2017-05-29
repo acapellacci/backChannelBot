@@ -35,8 +35,6 @@ bot.dialog('apertura', function (session) {
         session.endDialog("Dialog timed out");
     },10000);
 
-    session.privateConversationData[DialogTimer] = timer;
-
 }).triggerAction({
     matches: 'apertura'
 });
