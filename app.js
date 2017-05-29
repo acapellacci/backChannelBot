@@ -47,7 +47,7 @@ bot.dialog('faqs', function (session, args, next) {
 bot.dialog('presentazione', function (session) {
     session.send('Mi presento');
     session.send('Sono il nuovo Assistente Virtuale dell\'Arma dei Carabinieri.');
-    session.send('Sostituisco la collega','Sostituisco la collega');
+    session.send('Sostituisco la collega');
     session.send({
             attachments: [
                 {
@@ -65,8 +65,8 @@ bot.dialog('presentazione', function (session) {
                 attachments: [
                     {
                         contentType: "video/mp4",
-                        contentUrl: "http://localhost:8000/media/editChatBox_001.mp4",
-                        name: "editChatBox_001.mp4"
+                        contentUrl: "http://localhost:8000/media/presentazione.mp4",
+                        name: "presentazione.mp4"
                     }
                 ]
             });
