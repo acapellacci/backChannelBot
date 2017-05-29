@@ -23,9 +23,9 @@ bot.recognizer(recognizer);
 bot.dialog('apertura', function (session) {
     if (!session.privateConversationData[UserWelcomedKey]) {
         session.privateConversationData[UserWelcomedKey] = true;
-        session.endDialog('Ciao, come posso aiutarti?');
+        session.send('Ciao, come posso aiutarti?');
     } else {
-        session.endDialog('Ben tornato, come posso aiutarti adesso?');
+        session.send('Ben tornato, come posso aiutarti adesso?');
     }
 
     session.privateConversationData[DialogTimer] = setTimeout(function(){
