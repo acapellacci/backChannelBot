@@ -2,6 +2,7 @@ require('./connectorSetup.js')();
 
 var UserWelcomedKey = 'UserWelcomed';
 var DialogTimer = 'DialogTimer';
+var Avatar = 'DialogTimer';
 var JsonPath = require('jsonpath');
 var faqs = require('./faqs.json');
 
@@ -30,8 +31,8 @@ bot.dialog('apertura', function (session) {
         session.send('Ben tornato, come posso aiutarti adesso?');
     }
 
-    timer = setTimeout(function(){
-        var reply = createEvent("changeBackground", session.message.text, session.message.address);
+    session.privateConversationData.timer = setTimeout(function(){
+        var reply = createEvent("showAvatar", session.message.text, session.message.address);
         session.endDialog("Dialog timed out");
     },10000);
 
@@ -40,7 +41,7 @@ bot.dialog('apertura', function (session) {
 });
 
 bot.dialog('chiusura', function (session) {
-    clearTimeout(timer);
+    clearTimeout(session.privateConversationData.timer);
     session.endConversation('Grazie per averci contattato.');
     session.privateConversationData[UserWelcomedKey] = false;
 }).triggerAction({
@@ -48,7 +49,7 @@ bot.dialog('chiusura', function (session) {
 });
 
 bot.dialog('faqs', function (session, args, next) {
-    clearTimeout(timer);
+    clearTimeout(session.privateConversationData.timer);
     session.endDialog(retrieveResponse(args.intent.intent));
     //args.intent.score - it contains the score value
 }).triggerAction({
@@ -56,7 +57,7 @@ bot.dialog('faqs', function (session, args, next) {
 });
 
 bot.dialog('presentazione', function (session) {
-    clearTimeout(timer);
+    clearTimeout(session.privateConversationData.timer);
     session.send('Mi presento');
     session.send('Sono il nuovo Assistente Virtuale dell\'Arma dei Carabinieri.');
     session.send('Sostituisco la collega');
