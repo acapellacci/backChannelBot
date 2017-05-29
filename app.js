@@ -37,7 +37,7 @@ bot.dialog('apertura', function (session) {
         session.send('La chat è ancora attiva. Fammi una domanda.');
         var reply = createEvent("showAvatar", AvatarReminder, session.message.address);
         session.endDialog(reply);
-    },10000);
+    },20000);
 
 }).triggerAction({
     matches: 'apertura'
