@@ -22,7 +22,7 @@ bot.dialog('apertura', function (session) {
         session.send('Ben tornato, come posso aiutarti adesso?');
     }
 
-    var timer = setTimeout(function(){
+    timer = setTimeout(function(){
         session.send('La chat è ancora attiva. Fammi una domanda.');
         var reply = createEvent("showAvatar", AvatarReminder, session.message.address);
         session.endDialog(reply);
