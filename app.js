@@ -33,6 +33,7 @@ bot.dialog('apertura', function (session) {
         session.endDialog("Dialog timedout");
     },10000);
 
+    alert(timer);
     session.privateConversationData[DialogTimer] = timer;
 
 }).triggerAction({
@@ -41,6 +42,7 @@ bot.dialog('apertura', function (session) {
 
 bot.dialog('chiusura', function (session) {
     var timer = session.privateConversationData[DialogTimer];
+    alert(timer);
     clearTimeout(timer);
     session.endConversation('Grazie per averci contattato.');
     session.privateConversationData[UserWelcomedKey] = false;
