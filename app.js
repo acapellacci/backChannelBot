@@ -28,7 +28,7 @@ bot.dialog('apertura', function (session) {
         session.send('Ben tornato, come posso aiutarti adesso?');
     }
 
-    session.privateConversationData[DialogTimer] = setTimeout(function(){
+    setTimeout(function(){
         var reply = createEvent("changeBackground", session.message.text, session.message.address);
         session.endDialog("Dialog timedout");
     },10000);
