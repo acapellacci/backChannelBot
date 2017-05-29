@@ -1,7 +1,7 @@
 require('./connectorSetup.js')();
 
 var UserWelcomedKey = 'UserWelcomed';
-var UserWelcomedKey = 'DialogTimer';
+var DialogTimer = 'DialogTimer';
 var JsonPath = require('jsonpath');
 var faqs = require('./faqs.json');
 
