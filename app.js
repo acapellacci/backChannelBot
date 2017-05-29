@@ -2,7 +2,7 @@ require('./connectorSetup.js')();
 
 var UserWelcomedKey = 'UserWelcomed';
 var DialogTimer = 'DialogTimer';
-var Avatar = 'DialogTimer';
+var AvatarReminder = 'AvatarReminder';
 var JsonPath = require('jsonpath');
 var faqs = require('./faqs.json');
 
@@ -31,9 +31,9 @@ bot.dialog('apertura', function (session) {
         session.send('Ben tornato, come posso aiutarti adesso?');
     }
 
-    session.privateConversationData.timer = setTimeout(function(){
-        var reply = createEvent("showAvatar", session.message.text, session.message.address);
-        session.endDialog("Dialog timed out");
+    timer = setTimeout(function(){
+        var reply = createEvent("showAvatar", AvatarReminder, session.message.address);
+        session.endDialog(reply);
     },10000);
 
 }).triggerAction({
@@ -41,7 +41,7 @@ bot.dialog('apertura', function (session) {
 });
 
 bot.dialog('chiusura', function (session) {
-    clearTimeout(session.privateConversationData.timer);
+    clearTimeout(timer);
     session.endConversation('Grazie per averci contattato.');
     session.privateConversationData[UserWelcomedKey] = false;
 }).triggerAction({
@@ -57,7 +57,7 @@ bot.dialog('faqs', function (session, args, next) {
 });
 
 bot.dialog('presentazione', function (session) {
-    clearTimeout(session.privateConversationData.timer);
+    clearTimeout(timer);
     session.send('Mi presento');
     session.send('Sono il nuovo Assistente Virtuale dell\'Arma dei Carabinieri.');
     session.send('Sostituisco la collega');
