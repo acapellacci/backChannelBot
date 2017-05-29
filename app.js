@@ -1,7 +1,6 @@
 require('./connectorSetup.js')();
 
 var UserWelcomedKey = 'UserWelcomed';
-var DialogTimer = 'DialogTimer';
 var AvatarReminder = 'AvatarReminder';
 var AvatarPresentation = 'AvatarPresentation';
 var JsonPath = require('jsonpath');
@@ -12,6 +11,9 @@ var intents = JsonPath.query(faqs, '$.faqs.responses[?(@.intent != "")].intent')
 var recognizer = new builder.LuisRecognizer('https://westus.api.cognitive.microsoft.com/luis/v2.0/apps/bb31143e-7f94-4838-aeb3-02b399603fbf?subscription-key=eb17b4ee1a45442c909a3779fcfd00c1');
 bot.recognizer(recognizer);
 
+//TODOS - timer must be a user variable;
+var timer;
+
 bot.dialog('apertura', function (session) {
     if (!session.privateConversationData[UserWelcomedKey]) {
         session.privateConversationData[UserWelcomedKey] = true;
@@ -21,17 +23,16 @@ bot.dialog('apertura', function (session) {
     }
 
     var timer = setTimeout(function(){
+        session.send('La chat è ancora attiva. Fammi una domanda.');
         var reply = createEvent("showAvatar", AvatarReminder, session.message.address);
         session.endDialog(reply);
     },10000);
 
-    session.privateConversationData[DialogTimer] = timer;
 }).triggerAction({
     matches: 'apertura'
 });
 
 bot.dialog('chiusura', function (session) {
-    var timer = session.privateConversationData[DialogTimer];
     clearTimeout(timer);
     session.endConversation('Grazie per averci contattato.');
     session.privateConversationData[UserWelcomedKey] = false;
@@ -40,7 +41,6 @@ bot.dialog('chiusura', function (session) {
 });
 
 bot.dialog('faqs', function (session, args, next) {
-    var timer = session.privateConversationData[DialogTimer];
     clearTimeout(timer);
     session.endDialog(retrieveResponse(args.intent.intent) + timer);
     //args.intent.score - it contains the score value
@@ -49,7 +49,6 @@ bot.dialog('faqs', function (session, args, next) {
 });
 
 bot.dialog('presentazione', function (session) {
-    var timer = session.privateConversationData[DialogTimer];
     clearTimeout(timer);
     session.send('Mi presento');
     session.send('Sono il nuovo Assistente Virtuale dell\'Arma dei Carabinieri.');
