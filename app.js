@@ -19,6 +19,11 @@ bot.on("event", function (event) {
 var recognizer = new builder.LuisRecognizer('https://westus.api.cognitive.microsoft.com/luis/v2.0/apps/bb31143e-7f94-4838-aeb3-02b399603fbf?subscription-key=eb17b4ee1a45442c909a3779fcfd00c1');
 bot.recognizer(recognizer);
 
+bot.dialog('/', function (session, args, next) {
+    session.send('Start timeout');
+    next();
+});
+
 bot.dialog('apertura', function (session) {
     if (!session.privateConversationData[UserWelcomedKey]) {
         session.privateConversationData[UserWelcomedKey] = true;
@@ -40,6 +45,7 @@ bot.dialog('chiusura', function (session) {
 
 bot.dialog('faqs', function (session, args, next) {
     session.endDialog(retrieveResponse(args.intent.intent));
+    //args.intent.score - it contains the score value
 }).triggerAction({
     matches: intents
 });
