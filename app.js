@@ -28,17 +28,20 @@ bot.dialog('apertura', function (session) {
         session.send('Ben tornato, come posso aiutarti adesso?');
     }
 
-    setTimeout(function(){
+    var timer = setTimeout(function(){
         var reply = createEvent("changeBackground", session.message.text, session.message.address);
         session.endDialog("Dialog timedout");
     },10000);
+
+    session.privateConversationData[DialogTimer] = timer;
 
 }).triggerAction({
     matches: 'apertura'
 });
 
 bot.dialog('chiusura', function (session) {
-    clearTimeout(session.privateConversationData[DialogTimer]);
+    var timer = session.privateConversationData[DialogTimer];
+    clearTimeout(timer);
     session.endConversation('Grazie per averci contattato.');
     session.privateConversationData[UserWelcomedKey] = false;
 }).triggerAction({
@@ -46,7 +49,8 @@ bot.dialog('chiusura', function (session) {
 });
 
 bot.dialog('faqs', function (session, args, next) {
-    clearTimeout(session.privateConversationData[DialogTimer]);
+    var timer = session.privateConversationData[DialogTimer];
+    clearTimeout(timer);
     session.endDialog(retrieveResponse(args.intent.intent));
     //args.intent.score - it contains the score value
 }).triggerAction({
@@ -54,7 +58,8 @@ bot.dialog('faqs', function (session, args, next) {
 });
 
 bot.dialog('presentazione', function (session) {
-    clearTimeout(session.privateConversationData[DialogTimer]);
+    var timer = session.privateConversationData[DialogTimer];
+    clearTimeout(timer);
     session.send('Mi presento');
     session.send('Sono il nuovo Assistente Virtuale dell\'Arma dei Carabinieri.');
     session.send('Sostituisco la collega');
