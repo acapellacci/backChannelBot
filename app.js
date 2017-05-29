@@ -4,25 +4,13 @@ var UserWelcomedKey = 'UserWelcomed';
 var DialogTimer = 'DialogTimer';
 var AvatarReminder = 'AvatarReminder';
 var AvatarPresentation = 'AvatarPresentation';
-var AvatarApertura = 'AvatarApertura';
 var JsonPath = require('jsonpath');
 var faqs = require('./faqs.json');
 
 var intents = JsonPath.query(faqs, '$.faqs.responses[?(@.intent != "")].intent');
 
-//Bot listening for inbound backchannel events - in this case it only listens for events named "buttonClicked"
-bot.on("event", function (event) {
-    var msg = new builder.Message().address(event.address);
-    if (event.name === AvatarApertura) {
-        var reply = createEvent("showAvatar", AvatarApertura, session.message.address);
-        bot.send(reply);
-    }
-})
-
 var recognizer = new builder.LuisRecognizer('https://westus.api.cognitive.microsoft.com/luis/v2.0/apps/bb31143e-7f94-4838-aeb3-02b399603fbf?subscription-key=eb17b4ee1a45442c909a3779fcfd00c1');
 bot.recognizer(recognizer);
-
-bot.beginDialog()
 
 bot.dialog('apertura', function (session) {
     if (!session.privateConversationData[UserWelcomedKey]) {
