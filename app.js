@@ -23,7 +23,7 @@ bot.recognizer(recognizer);
 bot.dialog('apertura', function (session) {
     if (!session.privateConversationData[UserWelcomedKey]) {
         session.privateConversationData[UserWelcomedKey] = true;
-        return session.endDialog('Ciao, come posso aiutarti?');
+        session.endDialog('Ciao, come posso aiutarti?');
     } else {
         session.endDialog('Ben tornato, come posso aiutarti adesso?');
     }
