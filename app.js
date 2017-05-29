@@ -41,6 +41,7 @@ bot.dialog('chiusura', function (session) {
 
 bot.dialog('faqs', function (session, args, next) {
     var timer = session.privateConversationData[DialogTimer];
+    session.send(timer);
     clearTimeout(timer);
     session.endDialog(retrieveResponse(args.intent.intent));
     //args.intent.score - it contains the score value
