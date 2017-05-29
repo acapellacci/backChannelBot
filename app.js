@@ -1,6 +1,7 @@
 require('./connectorSetup.js')();
 
 var UserWelcomedKey = 'UserWelcomed';
+var UserWelcomedKey = 'DialogTimer';
 var JsonPath = require('jsonpath');
 var faqs = require('./faqs.json');
 
@@ -27,11 +28,17 @@ bot.dialog('apertura', function (session) {
         session.endDialog('Ben tornato, come posso aiutarti adesso?');
     }
 
+    session.privateConversationData[DialogTimer] = setTimeout(function(){
+        var reply = createEvent("changeBackground", session.message.text, session.message.address);
+        session.endDialog("Dialog timedout");
+    },10000);
+
 }).triggerAction({
     matches: 'apertura'
 });
 
 bot.dialog('chiusura', function (session) {
+    clearTimeout(session.privateConversationData[DialogTimer]);
     session.endConversation('Grazie per averci contattato.');
     session.privateConversationData[UserWelcomedKey] = false;
 }).triggerAction({
@@ -39,6 +46,7 @@ bot.dialog('chiusura', function (session) {
 });
 
 bot.dialog('faqs', function (session, args, next) {
+    clearTimeout(session.privateConversationData[DialogTimer]);
     session.endDialog(retrieveResponse(args.intent.intent));
     //args.intent.score - it contains the score value
 }).triggerAction({
@@ -46,6 +54,7 @@ bot.dialog('faqs', function (session, args, next) {
 });
 
 bot.dialog('presentazione', function (session) {
+    clearTimeout(session.privateConversationData[DialogTimer]);
     session.send('Mi presento');
     session.send('Sono il nuovo Assistente Virtuale dell\'Arma dei Carabinieri.');
     session.send('Sostituisco la collega');
