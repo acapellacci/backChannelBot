@@ -26,8 +26,6 @@ bot.dialog('apertura', function (session) {
     },10000);
 
     session.privateConversationData[DialogTimer] = timer;
-    session.send(timer);
-
 }).triggerAction({
     matches: 'apertura'
 });
