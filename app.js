@@ -52,7 +52,7 @@ bot.dialog('presentazione', function (session) {
             attachments: [
                 {
                     contentType: "image/jpeg",
-                    contentUrl: "http://localhost:8000/media/virtual_assistant_carabinieri.jpg",
+                    contentUrl: "http://webchatcarabinieri.azurewebsites.net/media/virtual_assistant_carabinieri.jpg",
                     name: "virtual_assistant_carabinieri.jpg"
                 }
             ]
@@ -65,7 +65,7 @@ bot.dialog('presentazione', function (session) {
                 attachments: [
                     {
                         contentType: "video/mp4",
-                        contentUrl: "http://localhost:8000/media/presentazione.mp4",
+                        contentUrl: "http://webchatcarabinieri.azurewebsites.net/media/presentazione.mp4",
                         name: "presentazione.mp4"
                     }
                 ]
