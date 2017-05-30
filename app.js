@@ -73,15 +73,7 @@ bot.dialog('presentazione', function (session) {
                 }
             ]
         });
-    session.send('Spero di essere alla sua altezza');
-    setTimeout(function () {
-        session.send('Ora ti mostro qualche novità');
-        setTimeout(function () {
-            var reply = createEvent("showAvatar", AvatarPresentation, session.message.address);
-            session.endDialog(reply);
-        }, 5000);
-    }, 5000);
-    
+    session.endDialog('Spero di essere alla sua altezza');
 }).triggerAction({
     matches: 'presentazione'
 });
