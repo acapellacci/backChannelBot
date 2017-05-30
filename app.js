@@ -1,6 +1,7 @@
 require('./connectorSetup.js')();
 
 var UserWelcomedKey = 'UserWelcomed';
+var showAvatar = 'showAvatar';
 var AvatarReminder = 'AvatarReminder';
 var AvatarApertura = 'AvatarApertura';
 var AvatarPresentation = 'AvatarPresentation';
@@ -19,8 +20,10 @@ var timer;
 bot.on("event", function (event) {
     var msg = new builder.Message().address(event.address);
     msg.textLocale("it-IT");
-    if (event.name === AvatarApertura) {
-        msg.text("Ciao, sono il nuovo Assistente Virtuale dell'Arma dei Carabinieri");
+    if (event.name === showAvatar) {
+        if (event.value === AvatarApertura) {
+            msg.text("Ciao, sono il nuovo Assistente Virtuale dell'Arma dei Carabinieri");
+        }
     }
     bot.send(msg);
 });
@@ -35,7 +38,7 @@ bot.dialog('apertura', function (session) {
 
     timer = setTimeout(function(){
         session.send('La chat è ancora attiva. Fammi una domanda.');
-        var reply = createEvent("showAvatar", AvatarReminder, session.message.address);
+        var reply = createEvent(showAvatar, AvatarReminder, session.message.address);
         session.endDialog(reply);
     },20000);
 
